@@ -1,0 +1,159 @@
+# **Technical Requirements Document: Gym Matching App**  
+**Version:** 1.0  
+**Last Updated:** [Date]  
+**Author:** [Your Name]  
+
+---
+
+## **1. Introduction**  
+This document outlines the technical requirements for developing a **Gym Matching App** using **React Native** (for mobile) and **Next.js** (for the backend/admin panel). The app allows users to upload their pictures and body details, while gym details are managed via an admin panel.  
+
+---
+
+## **2. Technical Stack**  
+### **Frontend (Mobile - React Native)**  
+- **Framework:** React Native (Expo or bare workflow)  
+- **State Management:** Redux Toolkit / React Query  
+- **Navigation:** React Navigation  
+- **UI Components:** NativeBase / React Native Paper  
+- **Image Upload:** Firebase Storage / AWS S3  
+- **Authentication:** Firebase Auth / JWT  
+- **API Client:** Axios / Fetch  
+
+### **Backend & Admin Panel (Next.js)**  
+- **Framework:** Next.js (API Routes)  
+- **Database:** Firebase/Firestore or PostgreSQL  
+- **Authentication:** NextAuth.js / Firebase Auth  
+- **Admin UI:** Material-UI / Chakra UI  
+- **API:** RESTful / GraphQL (optional)  
+
+---
+
+## **3. Core Features & Technical Tasks**  
+
+### **A. User App (React Native)**  
+
+#### **1. User Authentication & Profile Setup**  
+- **Task:** Implement Firebase Auth (Email/Google/Apple login).  
+- **Task:** Profile creation form (name, age, gender, fitness goals, body measurements).  
+- **Task:** Image upload (compress & store in Firebase Storage).  
+
+#### **2. Gym Matching Algorithm**  
+- **Task:** Define matching criteria (location, fitness goals, gym preferences).  
+- **Task:** Implement a scoring system (e.g., 1-10 match score).  
+- **Task:** Display potential matches in a swipeable card UI (Tinder-like).  
+
+#### **3. Gym Listings & Details**  
+- **Task:** Fetch gym data from backend (name, location, images, amenities).  
+- **Task:** Implement a map view (Google Maps/Mapbox) for nearby gyms.  
+
+#### **4. Chat & Notifications**  
+- **Task:** Real-time chat (Firebase Firestore/WebSockets).  
+- **Task:** Push notifications (Firebase Cloud Messaging).  
+
+---
+
+### **B. Admin Panel (Next.js)**  
+
+#### **1. Gym Management**  
+- **Task:** CRUD operations for gyms (add, edit, delete).  
+- **Task:** Bulk upload gyms via CSV/Excel.  
+
+#### **2. User & Match Moderation**  
+- **Task:** View/ban users.  
+- **Task:** Monitor reported matches.  
+
+#### **3. Analytics Dashboard**  
+- **Task:** Display user growth, match stats, gym popularity.  
+- **Task:** Export reports (PDF/CSV).  
+
+---
+
+## **4. API Endpoints (Sample)**  
+
+### **User App APIs**  
+| Endpoint | Method | Description |  
+|----------|--------|-------------|  
+| `/api/auth/signup` | POST | User registration |  
+| `/api/users/update-profile` | PUT | Update body details |  
+| `/api/gyms/nearby` | GET | Fetch nearby gyms |  
+| `/api/matches/suggestions` | GET | Get potential matches |  
+
+### **Admin APIs**  
+| Endpoint | Method | Description |  
+|----------|--------|-------------|  
+| `/admin/gyms/add` | POST | Add a new gym |  
+| `/admin/users/list` | GET | List all users |  
+| `/admin/analytics` | GET | Fetch app stats |  
+
+---
+
+## **5. Database Schema (Firestore/PostgreSQL)**  
+
+### **Users Collection**  
+```javascript
+{
+  id: string,
+  name: string,
+  email: string,
+  age: number,
+  gender: string,
+  fitnessGoals: string[],
+  bodyMeasurements: { height, weight, ... },
+  profilePic: string (URL),
+  gymPreferences: string[],
+  matches: [{ userId, score }],
+  createdAt: timestamp
+}
+```
+
+### **Gyms Collection**  
+```javascript
+{
+  id: string,
+  name: string,
+  location: { lat, lng, address },
+  images: string[],
+  amenities: string[],
+  rating: number,
+  addedBy: string (adminId)
+}
+```
+
+---
+
+## **6. Development Milestones**  
+
+1. **Phase 1:** Auth + User Profile (React Native)  
+2. **Phase 2:** Gym Matching Algorithm + UI  
+3. **Phase 3:** Admin Panel (Next.js) + Gym Management  
+4. **Phase 4:** Real-time Chat + Notifications  
+5. **Phase 5:** Testing & Deployment  
+
+---
+
+## **7. Testing & QA**  
+- Unit Tests: Jest / React Testing Library  
+- E2E Tests: Detox / Cypress  
+- Manual Testing: User flows, edge cases  
+
+---
+
+## **8. Deployment**  
+- **Mobile:** App Store & Play Store (Expo EAS / Fastlane)  
+- **Admin Panel:** Vercel / AWS Amplify  
+
+---
+
+### **Next Steps**  
+- Finalize UI/UX designs  
+- Set up Firebase/DB  
+- Assign tasks to developers  
+
+**Approval:**  
+[ ] Product Owner  
+[ ] Tech Lead  
+
+---
+
+Let me know if you need modifications or additional details! 🚀
