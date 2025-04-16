@@ -4,10 +4,10 @@ Find your perfect gym and workout partners with GymMatchMate - a modern matching
 
 ## 📱 App Preview
 
-![GymMatchMate Home](client/assets/previews/Screenshot%202025-04-15%20at%203.25.56%20PM.png)
-![GymMatchMate Matching](client/assets/previews/Screenshot%202025-04-15%20at%203.27.22%20PM.png)
-![GymMatchMate Profile](client/assets/previews/Screenshot%202025-04-15%20at%203.28.04%20PM.png)
-![GymMatchMate Settings](client/assets/previews/Screenshot%202025-04-15%20at%203.28.33%20PM.png)
+![GymMatchMate Home](client/assets/previews/1.png)
+![GymMatchMate Matching](client/assets/previews/2.png)
+![GymMatchMate Profile](client/assets/previews/3.png)
+![GymMatchMate Settings](client/assets/previews/4.png)
 
 ## 🌟 Features
 
@@ -90,4 +90,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Contact
 
-For any questions or suggestions, please open an issue on this repository. 
+For any questions or suggestions, please open an issue on this repository.
